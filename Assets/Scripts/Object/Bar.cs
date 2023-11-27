@@ -10,7 +10,7 @@ public class Bar : MonoBehaviour
     private float speed;                                // 이동 속도
     private decimal arrive;                             // 도착 시간
     private decimal timing;                             // 남은 시간
-    private Vector2 end = new Vector2(-8f, 0f);         // 도착 위치
+    private Vector2 end = new Vector2(0f, -3f);         // 도착 위치
     private Transform trans;                            // 자신의 transform 활용을 위한 캐싱
     private RhythmManager manager;                      // 리듬 매니저 캐싱
     void Update()

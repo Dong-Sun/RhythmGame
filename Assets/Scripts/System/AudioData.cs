@@ -21,9 +21,9 @@ public class AudioData
         Level = "Easy";
         Length = 60f;
         Sync = 0f;
-        NoteLines = new SortedList<int, NoteType>[2];
-        NoteLines[0] = new SortedList<int, NoteType>();
-        NoteLines[1] = new SortedList<int, NoteType>();
+        NoteLines = new SortedList<int, NoteType>[4];
+        for(int i = 0; i < NoteLines.Length; i++)
+            NoteLines[i] = new SortedList<int, NoteType>();
     }
 
     public AudioData(string fileName)

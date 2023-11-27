@@ -3,6 +3,7 @@ using UnityEngine;
 /// <summary>
 /// 리듬게임의 배경 노래 출력과 관련된 클래스
 /// </summary>
+[RequireComponent(typeof(AudioSource))]
 public class BGSound : MonoBehaviour
 {
     public float Timer = 2f;        // 시작 딜레이

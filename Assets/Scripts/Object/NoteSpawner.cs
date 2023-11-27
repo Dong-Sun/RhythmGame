@@ -16,21 +16,12 @@ public class NoteSpawner : MonoBehaviour
     public RhythmStorage storage;           // 리듬게임 오브젝트를 담는 클래스
     private RhythmManager manager;          // 리듬 매니저 캐싱
 
-    private Sprite[] pizzaIngredientSprArr;         // 피자 만들기에서 선택한 재료를 불러올 배열(일반 노트)
-    private Sprite[] pizzaIngredientSprArrGolden;   // 피자 만들기에서 선택한 재료를 불러올 배열(홀드 노트)
-
-    private Vector2 end = new Vector2(-8f, 0f);     // 노트 및 마디가 향할 좌표
+    private Vector2 end = new Vector2(0f, -3f);     // 노트 및 마디가 향할 좌표
 
     private void Start()
     {
         // 리듬 매니저 캐싱
         manager = RhythmManager.Instance;
-
-        // 일반 노트 이미지 불러오기
-        pizzaIngredientSprArr = Resources.LoadAll<Sprite>("UI/Ingredients_120_120");
-
-        // 홀드 노트 이미지 불러오기
-        pizzaIngredientSprArrGolden = Resources.LoadAll<Sprite>("UI/Golden_Ingredients_120_120");
 
         // 초기화 함수 호출
         Init();
@@ -90,7 +81,7 @@ public class NoteSpawner : MonoBehaviour
                     note.GetComponent<SpriteRenderer>().color = Color.yellow;
 
                 // 해당 노트가 있는 라인의 y좌표로 초기화
-                end.y = Lines[i].transform.position.y;
+                end.y = Lines[i].transform.position.x;
 
                 // 노트 초기화
                 note.Init(BitSlice * v.Key, end);
